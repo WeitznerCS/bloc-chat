@@ -14,6 +14,6 @@
          });
  }
     angular
-        .module('bloc-chat', ['ui.router', 'firebase'])
+        .module('bloc-chat', ['ui.router', 'firebase', 'ui.bootstrap'])
         .config(config);
 })();
