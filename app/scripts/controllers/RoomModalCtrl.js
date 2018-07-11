@@ -1,6 +1,7 @@
 (function() {
     function RoomModalCtrl(Room, $uibModalInstance) {
       this.ok = function () {
+        Room.add(this.newRoom)
         $uibModalInstance.close(this.roomName);
       };
 
