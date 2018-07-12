@@ -1,6 +1,14 @@
 (function() {
     function HomeCtrl(Room, Message, $uibModal) {
       this.rooms = Room.all;
+      this.messages = [];
+
+      this.setCurrentRoom = function (room) {
+        console.log('room', room)
+        this.currentRoom = room;
+
+        this.messages = Message.getByRoomId(room.$id)
+      }
 
       this.open = function() {
         var modalInstance = $uibModal.open({

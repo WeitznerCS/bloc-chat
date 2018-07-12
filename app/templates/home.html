@@ -1,3 +1,12 @@
 <h1>Home Page</h1>
 <button ng-click="home.open()">New Room</button>
-<p ng-repeat="room in home.rooms">{{room.$value}}</p>
+<p ng-repeat="room in home.rooms" ng-click="home.setCurrentRoom(room)">{{room.$value}}</p>
+
+<div class="chat-section">
+  <h3 style="text-align:center;">{{ home.currentRoom.$value }}</h3>
+  <div class="messages" ng-repeat="message in home.messages">
+    <div class="username" style="text-align:center;">{{ message.username }}</div>
+    <div class="timestamp" style="text-align:center;">{{ message.sentAt }}</div>
+    <div class="user-message" style="text-align:center;">{{ message.content }}</div>
+  </div>
+</div>
